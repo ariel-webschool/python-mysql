@@ -17,3 +17,8 @@ Assurez-vous que le module `mysql-connector-python` est installé. Vous pouvez l
 ```bash
 pip install mysql-connector-python
 ```
+
+### Demarrez l'application
+```bash
+python3.13 main.py
+```
