@@ -17,8 +17,24 @@ Assurez-vous que le module `mysql-connector-python` est installé. Vous pouvez l
 ```bash
 pip install mysql-connector-python
 ```
+### Demarrer Xampp: apache et MySQL
+
+### Demarrer le setup de l'application sur le terminale
+
+```bash
+  python3.13 setup.py
+```
+- cette commande va installer l'application:
+  1. Elle creer automatiquement la base de donnee
+  2. Creer une table `users` dans la base de donnee
+  3. Alimente la base de donnee dans la table users.
 
 ### Demarrez l'application
+- Avant de demarrer l'application, regarder le fichier script:
+- Decommenter les methodes que vous voulez, et commenter les autres.
+- Demarrez:
 ```bash
 python3.13 main.py
 ```
+Essayer d'utiliser a chaque fois les methodes et comprendre les mecanismes de bases du CRUD.
+ヾ(⌐■_■)ノ♪
