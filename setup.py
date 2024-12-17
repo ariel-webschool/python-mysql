@@ -25,7 +25,7 @@ def create_database():
     if connection:
         try:
             cursor = connection.cursor()
-            cursor.execute("CREATE DATABASE IF NOT EXISTS %s", (db_name,))
+            cursor.execute(f"CREATE DATABASE {db_name}")
             print(f"Database '{db_name}' created or already exists.")
         except Error as e:
             print(f"SQL Error: {e}")
@@ -82,7 +82,7 @@ def rollback():
     if connection:
         try:
             cursor = connection.cursor()
-            cursor.execute("DROP DATABASE IF EXISTS %s", (db_name,))
+            cursor.execute(f"DROP DATABASE IF EXISTS `{db_name}`")
             print(f"Database '{db_name}' dropped.")
         except Error as e:
             print(f"SQL Error: {e}")
