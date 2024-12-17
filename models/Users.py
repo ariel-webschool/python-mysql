@@ -49,8 +49,7 @@ class Users:
 		sql = f"SELECT * FROM {table_name}"
 		mycursor.execute(sql)
 		myresult = mycursor.fetchall()
-		for x in myresult:
-			print(x)
+		return myresult
     
 	def find(self,name):
 		db_name="webschool_test"
@@ -71,14 +70,19 @@ class Users:
 	def add(self, name, password):
 		db_name="webschool_test"
 		table_name="users"
-		mydb = mysql.connector.connect(
+  
+		connection = mysql.connector.connect(
 			host="localhost",
 			user="root",
 			password="",
-			database=db_name
+			database=db_name,
+       		charset="utf8mb4"
 		)
-		mycursor = mydb.cursor()
-		sql = f"INSERT INTO {table_name} (name, password) VALUES (%s, %s)"
+		cursor = connection.cursor()
+		sql = f"INSERT INTO `{table_name}` (name, password) VALUES (%s, %s)"
 		val = (name, password)
-		mycursor.execute(sql, val)
-		print(mycursor.rowcount, "record inserted.")
+		cursor.execute(sql, val)
+		connection.commit()
+		cursor.close()
+		connection.close()
+		print(cursor.rowcount, "record inserted.")
