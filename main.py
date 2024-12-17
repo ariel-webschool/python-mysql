@@ -11,10 +11,13 @@ print("Api de Gestion des utilisateurs")
 
 handler = Users()
 # Ajout
-# handler.add("Jordan","Jesuisengardecesoir")
-# handler.all()
+# print("Ajout d'utilisateur!")
+# handler.add("David","Spiderman")
+# handler.add("Chai","Musclor")
+list_des_utilisateurs = handler.all()
+print(list_des_utilisateurs)
 
-# Supprression
+# Suppression
 # handler.delete("Jordan")
 # handler.all()
 
